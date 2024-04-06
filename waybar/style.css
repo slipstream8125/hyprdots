@@ -47,6 +47,7 @@ Arc-Dark Color Scheme
     margin: 1px;
     padding: 0;
     color: #66ACED;
+	/* color: #AD0202; */
 }
 
 
@@ -64,6 +65,7 @@ window#waybar {
 
 /* Every modules */
 #battery,
+#bluetooth,
 #clock,
 #backlight,
 #cpu,
@@ -85,6 +87,7 @@ window#waybar {
     margin: 1px 6px;
     background-color: rgba(0,0,0,0.8);
     border-radius: 20px;
+
 }
 
 /* -----------------------------------------------------------------------------
@@ -232,6 +235,7 @@ window#waybar {
 #custom-power {
     font-size:18px;
     padding-right: 1rem;
+	color: #AD0202;
 }
 
 #custom-launcher {

@@ -25,8 +25,8 @@
         "cpu",
         // "custom/keyboard-layout",
         //"custom/PBPbattery",
-        // "backlight#icon",
-        // "backlight#value",
+       //  "backlight#icon",
+         "backlight#value",
         "pulseaudio",
     "pulseaudio#microphone",
         "network",
@@ -56,12 +56,13 @@
         "format-plugged": "{capacity}% ",
         // "format-good": "", // An empty format will hide the module
         // "format-full": "",
-        "format-icons": ["", "", "", "", ""]
+        "format-icons": ["", "", "", "", ""],
+		"on-click" : "asusctl profile -n"
     },
 
     "custom/PBPbattery": {
         "exec": "asusctl profile -n",
-        "format": "{icon}",
+        "format": "{}",
     },
 
     "clock": {
@@ -164,20 +165,20 @@
           //  "car": "",
             "default": [""]
         },
-        "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+        "on-click": "volumectl -u toggle-mute",
         "on-click-right": "pavucontrol",
-        "on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +2%",
-        "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -2%",
+        "on-scroll-up": "volumectl -u up",
+        "on-scroll-down": "volumectl -u down",
     },
 
     "pulseaudio#microphone": {
         "format": "{format_source}",
         "format-source": " {volume}%",
         "format-source-muted": " ",
-        "on-click": "pamixer --default-source -t",
+        "on-click": "volumectl -m toggle-mute",
         "on-click-right": "pavucontrol",
-        "on-scroll-up": "pamixer --default-source -i 5",
-        "on-scroll-down": "pamixer --default-source -d 5",
+        "on-scroll-up": "volumectl -m up",
+        "on-scroll-down": "volumectl -m down",
         "scroll-step": 5
     },
 
@@ -211,7 +212,8 @@
     },
 
     "backlight#value" :{
-         "format": "{percent}%",
+         "format": "{icon} {percent}%",
+        "format-icons": [""],
          "on-scroll-down": "brightnessctl -c backlight set 1%-",
          "on-scroll-up": "brightnessctl -c backlight set +1%"
     },
@@ -254,6 +256,7 @@
             "spotify": "",
             "default": "󰗃"
         },
+		"on-click": "exec playerctl play-pause",
         "escape": true,
         "exec": "/usr/bin/python $HOME/.config/waybar/scripts/mediaplayer.py 2> /dev/null" // Script in resources folder
     }
