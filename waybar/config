@@ -165,20 +165,20 @@
           //  "car": "",
             "default": [""]
         },
-        "on-click": "volumectl -u toggle-mute",
+        "on-click": "swayosd-client --output-volume mute-toggle",
         "on-click-right": "pavucontrol",
-        "on-scroll-up": "volumectl -u up",
-        "on-scroll-down": "volumectl -u down",
+        "on-scroll-up": "swayosd-client --output-volume +5 --max-volume 120",
+        "on-scroll-down": "swayosd-client --output-volume -5 --max-volume 120",
     },
 
     "pulseaudio#microphone": {
         "format": "{format_source}",
         "format-source": " {volume}%",
         "format-source-muted": " ",
-        "on-click": "volumectl -m toggle-mute",
+        "on-click": "swayosd-client --input-volume mute-toggle",
         "on-click-right": "pavucontrol",
-        "on-scroll-up": "volumectl -m up",
-        "on-scroll-down": "volumectl -m down",
+        "on-scroll-up": "swayosd-client --input-volume raise",
+        "on-scroll-down": "swayosd-client --input-volume lower",
         "scroll-step": 5
     },
 
