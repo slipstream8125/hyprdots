@@ -46,8 +46,9 @@ Arc-Dark Color Scheme
     min-height: 0;
     margin: 1px;
     padding: 0;
-    color: #66ACED;
+    /* color: #66ACED; */
 	/* color: #AD0202; */
+	color: #EEC801;
 }
 
 
@@ -74,6 +75,7 @@ window#waybar {
 #mode,
 #custom-weather,
 #network,
+#power-profiles-daemon,
 #pulseaudio,
 #temperature,
 #tray,
@@ -96,7 +98,9 @@ window#waybar {
 
 #clock {
     /* color: #ff4499; */
-    color: #73daca;
+    /* color: #73daca; */
+	/* color: #C9060C; */
+	color: #EEC801;
 }
 
 #custom-weather {

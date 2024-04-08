@@ -8,10 +8,12 @@
     "height": 30,
 
     "modules-left": [
-         "custom/launcher",
+     //    "custom/launcher",
+		"idle_inhibitor",
         "hyprland/workspaces",
         "hyprland/window",
         "custom/media",
+		"temperature",
     ],
  
     "modules-center": [
@@ -26,13 +28,14 @@
         // "custom/keyboard-layout",
         //"custom/PBPbattery",
        //  "backlight#icon",
-         "backlight#value",
+       //  "backlight#value",
         "pulseaudio",
     "pulseaudio#microphone",
         "network",
 		"bluetooth",
+		"power-profiles-daemon",
         "battery",
-		"custom/power"
+		 "custom/power",
     ],
 
     // Modules
@@ -79,18 +82,7 @@
             "warning": 70,
             "critical": 90,
         },
-        "on-click": "kitty -e 'btm'",
-    },
-
-    "custom/keyboard-layout": {
-        "exec": "swaymsg -t get_inputs | grep -m1 'xkb_active_layout_name' | cut -d '\"' -f4",
-        // Interval set only as a fallback, as the value is updated by signal
-        "interval": 30,
-        "format": "  {}", // Icon: keyboard
-        // Signal sent by Sway key binding (~/.config/sway/key-bindings)
-        "signal": 1, // SIGHUP
-        "tooltip": false,
-        "on-click": "~/.config/waybar/scripts/keyhint.sh",
+		"on-click": "gnome-system-monitor",
     },
 
     "memory": {
@@ -100,9 +92,17 @@
         "states": {
             "warning": 70,
             "critical": 90
-        }
+        },
+		"on-click": "gnome-system-monitor",
     },
-
+	 "temperature": {
+	// "thermal-zone": 2,
+	// "hwmon-path": ["/sys/class/hwmon/hwmon2/temp1_input", "/sys/class/thermal/thermal_zone0/temp"],
+	// "critical-threshold": 80,
+	// "format-critical": "{temperatureC}°C ",
+	"format": "{temperatureC}°C ",
+	"on-click": "gnome-system-monitor",
+},
     "network": {
         "interval": 5,
         "format-wifi": " ", // Icon: wifi
@@ -117,7 +117,13 @@
         "format-disconnected": "⚠  Disconnected",
         "tooltip-format": "{ifname}: {ipaddr}/{cidr}",
     },
-
+	"idle_inhibitor": {
+	  "format": "{icon}",
+	  "format-icons": {
+        "activated": "",
+        "deactivated": ""
+		}
+	},
     "hyprland/mode": {
         "format": "{}",
         "tooltip": false
@@ -203,7 +209,18 @@
         "icon-size": 18,
         "spacing":10,
      },
-
+	"power-profiles-daemon": {
+	  "format": "{icon}   {profile}",
+	  "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+	  "tooltip": true,
+	  "format-icons": {
+		"default": "",
+		"performance": "",
+		"balanced": "",
+		"power-saver": ""
+	  },
+	  "on-click":"asusctl profile -n",
+	},
     "backlight#icon": {
         "format": "{icon}",
         "format-icons": [""],
@@ -239,12 +256,12 @@
     "custom/launcher": {
         "format":" ",
         "on-click": "exec wofi -c ~/.config/wofi/config -I",
-        "tooltip": false,
+        "tooltip": false
     },
 
     "custom/power": {
-        "format":"⏻",
-        "on-click": "exec ~/.config/waybar/scripts/power-menu.sh",
+        "format":"",
+        "on-click": "",
         "tooltip": false,
     },
 
