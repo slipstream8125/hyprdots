@@ -9,10 +9,8 @@
 /* -----------------------------------------------------------------------------
  * Keyframes
  * -------------------------------------------------------------------------- */
+@import url('file:///home/slipstream/.cache/wal/colors-waybar.css');
 
-/*
-Arc-Dark Color Scheme
-*/
 @keyframes blink-warning {
     70% {
         color: white;
@@ -48,7 +46,7 @@ Arc-Dark Color Scheme
     padding: 0;
     /* color: #66ACED; */
 	/* color: #AD0202; */
-	color: #EEC801;
+	color: @color6;
 }
 
 
@@ -100,7 +98,7 @@ window#waybar {
     /* color: #ff4499; */
     /* color: #73daca; */
 	/* color: #C9060C; */
-	color: #EEC801;
+	color: @color6;
 }
 
 #custom-weather {
