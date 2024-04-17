@@ -8,11 +8,11 @@
     "height": 30,
 
     "modules-left": [
-     //    "custom/launcher",
-		"idle_inhibitor",
+		// "idle_inhibitor",
+		"custom/launcher",
         "hyprland/workspaces",
         "hyprland/window",
-        "custom/media",
+		"mpris",
 		"temperature",
     ],
  
@@ -22,13 +22,8 @@
 
     "modules-right": [
         "tray",
-        // "idle_inhibitor",
         "memory",
         "cpu",
-        // "custom/keyboard-layout",
-        //"custom/PBPbattery",
-       //  "backlight#icon",
-       //  "backlight#value",
         "pulseaudio",
     "pulseaudio#microphone",
         "network",
@@ -48,6 +43,26 @@
         }
     },
 
+	"mpris": {
+		"format": "{player_icon} {status_icon} <b>{player}</b> {title}",
+		"format-paused": "{player_icon} {status_icon} <b>{player}</b> {title}",
+		"player-icons": {
+			"default": "",
+			"mpv": "",
+			"spotify": "",
+			"youtube": "󰗃",
+			"firefox": "",
+		},
+		"status-icons": {
+			"playing": "",
+			"paused": "",
+			"stopped": "",
+		},
+		"exec-once": "playerctl play-pause",
+		// "ignored-players": ["firefox"],
+		"max-length": 50,
+	},
+
     "battery": {
         "states": {
             // "good": 95,
@@ -63,16 +78,13 @@
 		"on-click" : "asusctl profile -n"
     },
 
-    "custom/PBPbattery": {
-        "exec": "asusctl profile -n",
-        "format": "{}",
-    },
-	
+
     "clock": {
         "interval": 10,
         // "format-alt": " {:%e %b %Y}", // Icon: calendar-alt
         "format": "{:%e %b %Y %I:%M} ",
-        "tooltip-format": "{:%e %B %Y}"
+        "tooltip-format": "{:%e %B %Y}",
+		"on-click" : "gnome-calendar"
     },
 
     "cpu": {
@@ -155,6 +167,21 @@
          //   "6": "",
         }
     },
+	"custom/waybar-mpris": {
+		"return-type": "json",
+		"max-length": 100, 
+		"exec": "waybar-mpris --position --autofocus",
+		"on-click": "waybar-mpris --send toggle",
+		// This option will switch between players on right click.
+			"on-click-right": "waybar-mpris --send player-next",
+		// The options below will switch the selected player on scroll
+			// "on-scroll-up": "waybar-mpris --send player-next",
+			// "on-scroll-down": "waybar-mpris --send player-prev",
+		// The options below will go to next/previous track on scroll
+			// "on-scroll-up": "waybar-mpris --send next",
+			// "on-scroll-down": "waybar-mpris --send prev",
+		"escape": true,
+	},
 
     "pulseaudio": {
         "scroll-step": 1, // %, can be a float
@@ -265,16 +292,16 @@
         "tooltip": false,
     },
 
-    "custom/media": {
-        "format": "{icon} {}",
-        "return-type": "json",
-        "max-length": 40,
-        "format-icons": {
-            "spotify": "",
-            "default": "󰗃"
-        },
-		"on-click": "exec playerctl play-pause",
-        "escape": true,
-        "exec": "/usr/bin/python $HOME/.config/waybar/scripts/mediaplayer.py 2> /dev/null" // Script in resources folder
-    }
+//    "custom/media": {
+//        "format": "{icon} {}",
+//        "return-type": "json",
+//        "max-length": 40,
+//        "format-icons": {
+//            "spotify": "",
+//            "default": "󰗃"
+//        },
+//		"on-click": "exec playerctl play-pause",
+//        "escape": true,
+//        "exec": "/usr/bin/python $HOME/.config/waybar/scripts/mediaplayer.py 2> /dev/null" // Script in resources folder
+//    }
 }
