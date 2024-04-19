@@ -200,8 +200,8 @@
         },
         "on-click": "swayosd-client --output-volume mute-toggle",
         "on-click-right": "pavucontrol",
-        "on-scroll-up": "swayosd-client --output-volume +5 --max-volume 120",
-        "on-scroll-down": "swayosd-client --output-volume -5 --max-volume 120",
+        "on-scroll-up": "swayosd-client --output-volume +5 --max-volume 150",
+        "on-scroll-down": "swayosd-client --output-volume -5 --max-volume 150",
     },
 
     "pulseaudio#microphone": {
