@@ -8,8 +8,8 @@
     "height": 30,
 
     "modules-left": [
-		// "idle_inhibitor",
-		"custom/launcher",
+		 "idle_inhibitor",
+	//	"custom/launcher",
         "hyprland/workspaces",
         "hyprland/window",
 		"mpris",
@@ -34,14 +34,6 @@
     ],
 
     // Modules
-
-    "idle_inhibitor": {
-        "format": "{icon} ",
-        "format-icons":{
-            "activated": "",
-            "deactivated": ""
-        }
-    },
 
 	"mpris": {
 		"format": "{player_icon} {status_icon} <b>{player}</b> {title}",
@@ -117,12 +109,13 @@
 },
     "network": {
         "interval": 5,
-        "format-wifi": " ", // Icon: wifi
+        "format-wifi": "", // Icon: wifi
         "format-ethernet": " ", // Icon: ethernet
         "format-disconnected": "⚠  Disconnected",
-        "tooltip-format": "{ifname}: {ipaddr}",
+        "tooltip-format": "{essid}: {frequency}Ghz \nDownload: {bandwidthDownBytes}\nUpload: {bandwidthUpBytes}\n{ifname}: {ipaddr}",
         "on-click": "bash ~/.config/hypr/scripts/wofi-network-manager/wofi-network-manager.sh",
-    },
+		"on-click-right": "alacritty -e 'nmtui'",
+	},
     "network#vpn": {
         "interface": "tun0",
         "format": " ",
@@ -132,8 +125,8 @@
 	"idle_inhibitor": {
 	  "format": "{icon}",
 	  "format-icons": {
-        "activated": "",
-        "deactivated": ""
+        "activated": "󰒳",
+        "deactivated": "󰒲"
 		}
 	},
     "hyprland/mode": {
@@ -221,7 +214,10 @@
         "enabled": "",
         "disabled": ""
     },
-    "on-click": "bash ~/.config/hypr/scripts/wofi-bluetooth"
+	"tooltip": true,
+	"tooltip-format": "Status: {status}\nDevice Connected: {device_alias}",
+    "on-click": "bash ~/.config/hypr/scripts/wofi-bluetooth",
+	"on-click-right": "blueman-manager",
 },
 
     // to use the weather module replace <your_location> with your city or town
@@ -287,8 +283,8 @@
     },
 
     "custom/power": {
-        "format":"",
-        "on-click": "",
+        "format":"󰐥",
+        "on-click": "exec bash -c ~/.config/hypr/scripts/powermenu.sh",
         "tooltip": false,
     },
 

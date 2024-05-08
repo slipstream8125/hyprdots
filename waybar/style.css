@@ -240,7 +240,7 @@ window#waybar {
 #custom-power {
     font-size:18px;
     padding-right: 1rem;
-	color: #AD0202;
+	color: @color2;
 }
 
 #custom-launcher {
