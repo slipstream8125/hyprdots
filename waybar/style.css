@@ -63,6 +63,8 @@ window#waybar {
 }
 
 /* Every modules */
+#custom-pomodoro,
+#custom-notification,
 #battery,
 #bluetooth,
 #clock,
@@ -106,6 +108,10 @@ window#waybar {
 
 #custom-weather {
     color: #ff4499;
+}
+
+#custom-notification {
+  font-family: "NotoSansMono Nerd Font";
 }
 
 #battery {
@@ -210,9 +216,9 @@ window#waybar {
     color: #f7768e;
 }
 
-#custom-media {
-    color: #bb9af7;
-}
+/* #custom-media { */
+/*     color: @color6; */
+/* } */
 
 #workspaces {
     font-size:16px;
@@ -240,6 +246,7 @@ window#waybar {
 #custom-power {
     font-size:18px;
     padding-right: 1rem;
+	padding-left: 1rem;
 	color: @color2;
 }
 
@@ -247,6 +254,12 @@ window#waybar {
     font-size:15px;
     margin-left:15px;
     margin-right:10px;
+}
+
+#custom-notification{
+	font-size: 15px;
+	padding-left: 1rem;
+	padding-right: 1rem;
 }
 
 #backlight.icon {

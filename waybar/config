@@ -2,17 +2,18 @@
 {
     "layer": "top",
     "position": "top",
-    "margin": 5,
+    "margin": 3,
 
     // If height property would be not present, it'd be calculated dynamically
     "height": 30,
 
     "modules-left": [
-		 "idle_inhibitor",
+		"idle_inhibitor",
 	//	"custom/launcher",
         "hyprland/workspaces",
         "hyprland/window",
-		"mpris",
+	//	"mpris",
+		"custom/waybar-mpris",
 		"temperature",
     ],
  
@@ -21,6 +22,7 @@
     ],
 
     "modules-right": [
+		"custom/pomodoro",
         "tray",
         "memory",
         "cpu",
@@ -31,6 +33,7 @@
 		"power-profiles-daemon",
         "battery",
 		 "custom/power",
+		 "custom/notification",
     ],
 
     // Modules
@@ -51,7 +54,6 @@
 			"stopped": "",
 		},
 		"exec-once": "playerctl play-pause",
-		// "ignored-players": ["firefox"],
 		"max-length": 50,
 	},
 
@@ -69,7 +71,12 @@
         "format-icons": ["", "", "", "", ""],
 		"on-click" : "asusctl profile -n"
     },
-
+	"custom/pomodoro":{
+		"interval": 1,
+		"format": " {}",
+		"exec": "tomato -t | cut -d' ' -f 2",
+		"on-click": "alacritty -e tomato",
+	},
 
     "clock": {
         "interval": 10,
@@ -158,11 +165,12 @@
          //   "4": "",
          //   "5": "󰡨",
          //   "6": "",
+			"10": "󰍹",
         }
     },
 	"custom/waybar-mpris": {
 		"return-type": "json",
-		"max-length": 100, 
+		"max-length": 50, 
 		"exec": "waybar-mpris --position --autofocus",
 		"on-click": "waybar-mpris --send toggle",
 		// This option will switch between players on right click.
@@ -180,7 +188,7 @@
         "scroll-step": 1, // %, can be a float
         "format": "{icon} {volume}%",
         "format-bluetooth": "{volume}% {icon}  ",
-        "format-bluetooth-muted": " {icon}  ",
+        "format-bluetooth-muted": "{icon}  ",
         "format-muted": "󰸈",
         "format-icons": {
           //  "headphone": "󰋋",
@@ -220,21 +228,13 @@
 	"on-click-right": "blueman-manager",
 },
 
-    // to use the weather module replace <your_location> with your city or town
-    // note: do not use spaces: new york would be newyork
-    "custom/weather": {
-        "exec": "~/.config/waybar/scripts/weather.sh tampa", 
-        "return-type": "json",
-        "interval": 600,
-    },
-
     "tray": {
         "icon-size": 18,
         "spacing":10,
      },
 	"power-profiles-daemon": {
-	  "format": "{icon}   {profile}",
-	  "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+	  "format": "{icon}",
+	  "tooltip-format": "Power profile: {profile}",
 	  "tooltip": true,
 	  "format-icons": {
 		"default": "",
@@ -287,6 +287,26 @@
         "on-click": "exec bash -c ~/.config/hypr/scripts/powermenu.sh",
         "tooltip": false,
     },
+	 "custom/notification": {
+    "tooltip": false,
+    "format": "{icon}",
+    "format-icons": {
+      "notification": "<span foreground='red'><sup></sup></span>",
+      "none": "",
+      "dnd-notification": "<span foreground='red'><sup></sup></span>",
+      "dnd-none": "",
+      "inhibited-notification": "<span foreground='red'><sup></sup></span>",
+      "inhibited-none": "",
+      "dnd-inhibited-notification": "<span foreground='red'><sup></sup></span>",
+      "dnd-inhibited-none": "󰂛"
+    },
+    "return-type": "json",
+    "exec-if": "which swaync-client",
+    "exec": "swaync-client -swb",
+    "on-click": "swaync-client -t -sw",
+    "on-click-right": "swaync-client -d -sw",
+    "escape": true
+  },
 
 //    "custom/media": {
 //        "format": "{icon} {}",

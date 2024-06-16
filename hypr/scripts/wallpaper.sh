@@ -21,13 +21,13 @@ rasi_file="$HOME/.cache/current_wallpaper.rasi"
 # Create cache file if not exists
 if [ ! -f $cache_file ] ;then
     touch $cache_file
-    echo "$HOME/wallpaper/default.jpg" > "$cache_file"
+    echo "$HOME/hyprdots/wallpaper/default.jpg" > "$cache_file"
 fi
 
 # Create rasi file if not exists
 if [ ! -f $rasi_file ] ;then
     touch $rasi_file
-    echo "* { current-image: url(\"$HOME/wallpaper/default.jpg\", height); }" > "$rasi_file"
+    echo "* { current-image: url(\"$HOME/hyprdots/wallpaper/default.jpg\", height); }" > "$rasi_file"
 fi
 
 current_wallpaper=$(cat "$cache_file")
@@ -40,14 +40,14 @@ case $1 in
         if [ -f $cache_file ]; then
             wal -q -i $current_wallpaper
         else
-            wal -q -i ~/wallpaper/
+            wal -q -i ~/hyprdots/wallpaper/
         fi
     ;;
 
     # Select wallpaper with rofi
     *)
         sleep 0.2
-        selected=$( find "$HOME/wallpaper" -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" \) -exec basename {} \; | sort -R | while read rfile
+        selected=$( find "$HOME/hyprdots/wallpaper" -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" \) -exec basename {} \; | sort -R | while read rfile
         do
             echo -en "$rfile\x00icon\x1f$HOME/wallpaper/${rfile}\n"
         done | wofi -dmenu -i -no-show-icons)
@@ -55,12 +55,12 @@ case $1 in
             echo "No wallpaper selected"
             exit
         fi
-        wal -q -i ~/wallpaper/$selected
+        wal -q -i ~/hyprdots/wallpaper/$selected
     ;;
 
     # Randomly select wallpaper 
     "random")
-        wal -q -i ~/wallpaper/
+        wal -q -i ~/hyprdots/wallpaper/
     ;;
 
 esac
@@ -74,7 +74,7 @@ echo ":: Wallpaper: $wallpaper"
 # ----------------------------------------------------- 
 # get wallpaper image name
 # ----------------------------------------------------- 
-newwall=$(echo $wallpaper | sed "s|$HOME/wallpaper/||g")
+newwall=$(echo $wallpaper | sed "s|$HOME/hyprdots/wallpaper/||g")
 
 # ----------------------------------------------------- 
 # Reload waybar with new colors
