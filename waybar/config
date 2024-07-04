@@ -284,7 +284,8 @@
 
     "custom/power": {
         "format":"󰐥",
-        "on-click": "exec bash -c ~/.config/hypr/scripts/powermenu.sh",
+       // "on-click": "exec bash -c ~/.config/hypr/scripts/powermenu.sh",
+	   "on-click": "wlogout",
         "tooltip": false,
     },
 	 "custom/notification": {

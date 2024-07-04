@@ -14,6 +14,7 @@ alias VIT="cd /mnt/Personal/VIT"
 export StratOS="/mnt/Personal/StratOS-team"
 alias nvchad="NVIM_APPNAME=nvchad nvim"
 alias rss="neix"
+alias stratos-inxi='inxi -Faz'
 #alias cd='z'
 alias nvimconfig='cd ~/.config/nvim'
 export PERSONAL="/mnt/Personal/Programming/neorg/"

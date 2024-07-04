@@ -1,0 +1,8 @@
+# Preload Wallpapers
+preload = /home/slipstream/wallpaper/default.jpg
+
+# Set Wallpapers
+wallpaper = ,/home/slipstream/wallpaper/default.jpg
+
+# Disable Splash
+splash = false
