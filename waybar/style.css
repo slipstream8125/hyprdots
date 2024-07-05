@@ -56,6 +56,8 @@ window#waybar {
     /* background-color: rgba(0,0,0,0.8); */
     /* background-color: rgba(8,0,37,0.85); */
     background-color: rgba(0,0,0,0);
+	opacity: 0.8;
+
     /* font-family: JetBrains Mono Nerd Font; */
     font-family: Intel One Mono Nerd Font;
     font-size: 14px;
@@ -103,7 +105,7 @@ window#waybar {
     /* color: #ff4499; */
     /* color: #73daca; */
 	/* color: #C9060C; */
-	color: @color6;
+	color: @color5;
 }
 
 #custom-weather {

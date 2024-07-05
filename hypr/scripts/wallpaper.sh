@@ -56,6 +56,7 @@ case $1 in
             exit
         fi
         wal -q -i ~/hyprdots/wallpaper/$selected
+		ln -sf $HOME/hyprdots/wallpaper/$selected $HOME/.current_wallpaper
     ;;
 
     # Randomly select wallpaper 

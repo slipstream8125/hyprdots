@@ -28,3 +28,9 @@
     "text" : "Reboot",
     "keybind" : "r"
 }
+{
+	"label" : "theme-switcher",
+	"action" : "bash -c '$HOME/.config/hypr/scripts/wallpaper.sh' ",
+	"text" : "Theme Switcher",
+	"keybind" : "t"
+}
