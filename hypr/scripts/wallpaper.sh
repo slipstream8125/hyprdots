@@ -116,7 +116,7 @@ if [ "$1" == "init" ] ;then
     echo ":: Init"
 else
     sleep 1
-    dunstify "Changing wallpaper ..." "with image $newwall" -h int:value:33 -h string:x-dunst-stack-tag:wallpaper
+ #   dunstify "Changing wallpaper ..." "with image $newwall" -h int:value:33 -h string:x-dunst-stack-tag:wallpaper
     sleep 2
 fi
 
@@ -145,15 +145,15 @@ echo "$wallpaper" > "$cache_file"
 # ----------------------------------------------------- 
 # Send notification
 # ----------------------------------------------------- 
-dunstify "Setting theme in waybar"
+#dunstify "Setting theme in waybar"
 	pkill -USR2 waybar
-dunstify "Waybar theme set"
-dunstify "Changing dunst theme"
-	mkdir -p  "${HOME}/.config/dunst"
-	ln -sf    "${HOME}/.cache/wal/dunstrc" "${HOME}/.config/dunst/dunstrc"
-	pkill dunst
-	dunst &
-dunstify "Dunst theme changed"
+#dunstify "Waybar theme set"
+#dunstify "Changing dunst theme"
+#	mkdir -p  "${HOME}/.config/dunst"
+#	ln -sf    "${HOME}/.cache/wal/dunstrc" "${HOME}/.config/dunst/dunstrc"
+#	pkill dunst
+#	dunst &
+#dunstify "Dunst theme changed"
 if [ "$1" == "init" ] ;then
     echo ":: Init"
 else
