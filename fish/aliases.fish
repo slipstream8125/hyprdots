@@ -1,6 +1,7 @@
 alias programming='cd /mnt/Personal/Programming'
 alias lugvitc='cd /mnt/Personal/Linux-Club'
 alias fallenorder='$HOME/Games/Jedi.Fallen.Order-jc141/start.e-w.sh'
+alias StratVIM="NVIM_APPNAME=StratVIM nvim"
 alias auzia-conky="/home/slipstream/conky-at-startup.sh"
 alias macos='$HOME/OneClick-macOS-Simple-KVM/basic.sh &> /dev/null'
 alias lugrepo='cd /mnt/Personal/Linux-Club/LUGOS-repo'
