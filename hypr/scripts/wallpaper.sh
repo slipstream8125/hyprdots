@@ -154,6 +154,13 @@ echo "$wallpaper" > "$cache_file"
 #	pkill dunst
 #	dunst &
 #dunstify "Dunst theme changed"
+
+# --------------------------------------------------------
+# Change swaync theme
+# --------------------------------------------------------
+	swaync-client --reload-css
+
+# Notify pywal work is done
 if [ "$1" == "init" ] ;then
     echo ":: Init"
 else
