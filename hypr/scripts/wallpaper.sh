@@ -19,14 +19,14 @@ rasi_file="$HOME/.cache/current_wallpaper.rasi"
 # blur=$(cat $blur_file)
 
 # Create cache file if not exists
-if [ ! -f $cache_file ] ;then
-    touch $cache_file
+if [ ! -f "$cache_file" ] ;then
+    touch "$cache_file"
     echo "$HOME/hyprdots/wallpaper/default.jpg" > "$cache_file"
 fi
 
 # Create rasi file if not exists
-if [ ! -f $rasi_file ] ;then
-    touch $rasi_file
+if [ ! -f "$rasi_file" ] ;then
+    touch "$rasi_file"
     echo "* { current-image: url(\"$HOME/hyprdots/wallpaper/default.jpg\", height); }" > "$rasi_file"
 fi
 
@@ -37,8 +37,8 @@ case $1 in
     # Load wallpaper from .cache of last session 
     "init")
         sleep 1
-        if [ -f $cache_file ]; then
-            wal -q -i $current_wallpaper
+        if [ -f "$cache_file" ]; then
+            wal -q -i "$current_wallpaper"
         else
             wal -q -i ~/hyprdots/wallpaper/
         fi
@@ -55,8 +55,8 @@ case $1 in
             echo "No wallpaper selected"
             exit
         fi
-        wal -q -i ~/hyprdots/wallpaper/$selected
-		ln -sf $HOME/hyprdots/wallpaper/$selected $HOME/.current_wallpaper
+        wal -q -i ~/hyprdots/wallpaper/"$selected"
+		ln -sf "$HOME/hyprdots/wallpaper/$selected" "$HOME"/.current_wallpaper
     ;;
 
     # Randomly select wallpaper 
@@ -75,7 +75,7 @@ echo ":: Wallpaper: $wallpaper"
 # ----------------------------------------------------- 
 # get wallpaper image name
 # ----------------------------------------------------- 
-newwall=$(echo $wallpaper | sed "s|$HOME/hyprdots/wallpaper/||g")
+newwall=$(echo "$wallpaper" | sed "s|$HOME/hyprdots/wallpaper/||g")
 
 # ----------------------------------------------------- 
 # Reload waybar with new colors
@@ -104,9 +104,9 @@ transition_type="wipe"
     # hyprpaper
     echo ":: Using hyprpaper"
     killall hyprpaper
-    wal_tpl=$(cat $HOME/hyprdots/hypr/scripts/hyprpaper.tpl)
+    wal_tpl=$(cat "$HOME"/hyprdots/hypr/scripts/hyprpaper.tpl)
     output=${wal_tpl//WALLPAPER/$wallpaper}
-    echo "$output" > $HOME/hyprdots/hypr/hyprpaper.conf
+    echo "$output" > "$HOME"/hyprdots/hypr/hyprpaper.conf
     hyprpaper &
 # else
 #     echo ":: Wallpaper Engine disabled"
