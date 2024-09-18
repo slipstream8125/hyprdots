@@ -4,24 +4,24 @@ return {
 		event = { "BufReadPre", "BufNewFile" },
 		build = ":TSUpdate",
 		dependencies = {
-		  "hiphish/rainbow-delimiters.nvim",
-		  "JoosepAlviste/nvim-ts-context-commentstring",
-		  "nvim-treesitter/nvim-treesitter-textobjects",
-		  "RRethy/nvim-treesitter-textsubjects",
-    },
-		config = function ()
+			"hiphish/rainbow-delimiters.nvim",
+			"JoosepAlviste/nvim-ts-context-commentstring",
+			"nvim-treesitter/nvim-treesitter-textobjects",
+			"RRethy/nvim-treesitter-textsubjects",
+		},
+		config = function()
 			--	local treesitter = require("nvim-treesitter.configs") -- (has been deprecated)
-			local treesitter = require('ts_context_commentstring')
+			local treesitter = require("ts_context_commentstring")
 
 			treesitter.setup({
 				highlight = {
-					enable = true
+					enable = true,
 				},
 				indent = {
-					enable = true
+					enable = true,
 				},
 				autotag = {
-					enable = true
+					enable = true,
 				},
 				ensure_installed = {
 					"c",
@@ -53,14 +53,14 @@ return {
 						init_selection = "<C-space>",
 						node_incremental = "<C-space>",
 						scope_incremental = false,
-						node_decremental = "<bs>"
-					}
+						node_decremental = "<bs>",
+					},
 				},
 				context_commentstring = {
 					enable = true,
-					enable_autocmd = false
-				}
+					enable_autocmd = false,
+				},
 			})
-		end
-	}
+		end,
+	},
 }

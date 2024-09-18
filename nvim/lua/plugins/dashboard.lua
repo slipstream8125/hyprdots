@@ -4,6 +4,10 @@ return {
 	dependencies = { { "nvim-tree/nvim-web-devicons" } },
 	config = function()
 		local db = require("dashboard")
+		local config_path = vim.fn.stdpath("config")
+		local plugin_dir = "/lua/plugins/"
+		local plugin_path = config_path .. plugin_dir
+		local dashboard_file = config_path .. "/lua/plugins/dashboard.lua"
 
 		db.setup({
 			theme = "doom",
@@ -72,7 +76,9 @@ return {
 						key = "3",
 						keymap = "",
 						key_hl = "Number",
-						action = ":lua require('telescope.builtin').find_files({layout_strategy='vertical',layout_config={width=0.7},cwd='$XDG_CONFIG_HOME/nvim/lua/plugins'})", -- TODO: this needs tobe changed
+						action = ":lua require('telescope.builtin').find_files({layout_strategy='vertical',layout_config={width=0.7},cwd=[["
+							.. plugin_path
+							.. "]]})", -- TODO: this needs tobe changed
 					},
 					{
 						icon = "  ",

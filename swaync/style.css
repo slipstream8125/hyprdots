@@ -426,6 +426,7 @@
 
 .widget-buttons-grid > flowbox > flowboxchild > button.toggle:checked {
   /* style given to the active toggle button */
+	color: @color6;
 }
 
 /* Menubar widget */
