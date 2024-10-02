@@ -12,7 +12,6 @@
 	//	"custom/launcher",
         "hyprland/workspaces",
         "hyprland/window",
-	//	"mpris",
 		"custom/waybar-mpris",
 		"temperature",
     ],
@@ -37,25 +36,6 @@
     ],
 
     // Modules
-
-	"mpris": {
-		"format": "{player_icon} {status_icon} <b>{player}</b> {title}",
-		"format-paused": "{player_icon} {status_icon} <b>{player}</b> {title}",
-		"player-icons": {
-			"default": "",
-			"mpv": "",
-			"spotify": "",
-			"youtube": "󰗃",
-			"firefox": "",
-		},
-		"status-icons": {
-			"playing": "",
-			"paused": "",
-			"stopped": "",
-		},
-		"exec-once": "playerctl play-pause",
-		"max-length": 50,
-	},
 
     "battery": {
         "states": {
@@ -83,7 +63,7 @@
         // "format-alt": " {:%e %b %Y}", // Icon: calendar-alt
         "format": "{:%e %b %Y %I:%M} ",
         "tooltip-format": "{:%e %B %Y}",
-		"on-click" : "gnome-calendar"
+		"on-click" : "kitty -e calcure"
     },
 
     "cpu": {
@@ -121,7 +101,7 @@
         "format-disconnected": "⚠  Disconnected",
         "tooltip-format": "{essid}: {frequency}Ghz \nDownload: {bandwidthDownBytes}\nUpload: {bandwidthUpBytes}\n{ifname}: {ipaddr}",
         "on-click": "bash ~/.config/hypr/scripts/wofi-network-manager/wofi-network-manager.sh",
-		"on-click-right": "alacritty -e 'nmtui'",
+		"on-click-right": "kitty -e 'nmtui'",
 	},
     "network#vpn": {
         "interface": "tun0",
@@ -170,7 +150,7 @@
     },
 	"custom/waybar-mpris": {
 		"return-type": "json",
-		"max-length": 50, 
+		"max-length": 40, 
 		"exec": "waybar-mpris --position --autofocus",
 		"on-click": "waybar-mpris --send toggle",
 		// This option will switch between players on right click.
@@ -244,44 +224,6 @@
 	  },
 	  "on-click":"asusctl profile -n",
 	},
-    "backlight#icon": {
-        "format": "{icon}",
-        "format-icons": [""],
-        "on-scroll-down": "brightnessctl -c backlight set 1%-",
-        "on-scroll-up": "brightnessctl -c backlight set +1%"
-    },
-
-    "backlight#value" :{
-         "format": "{icon} {percent}%",
-        "format-icons": [""],
-         "on-scroll-down": "brightnessctl -c backlight set 1%-",
-         "on-scroll-up": "brightnessctl -c backlight set +1%"
-    },
-
-    "custom/firefox": {
-        "format": " ",
-        "on-click": "exec firefox",
-        "tooltip": false
-    },
-
-    "custom/terminal": {
-        "format": " ",
-        "on-click": "exec kitty",
-        "tooltip": false
-    },
-
-    "custom/files": {
-        "format": " ",
-        "on-click": "exec nautilus",
-        "tooltip": false
-    },
-
-    "custom/launcher": {
-        "format":" ",
-        "on-click": "exec wofi -c ~/.config/wofi/config -I",
-        "tooltip": false
-    },
-
     "custom/power": {
         "format":"󰐥",
        // "on-click": "exec bash -c ~/.config/hypr/scripts/powermenu.sh",
@@ -309,16 +251,4 @@
     "escape": true
   },
 
-//    "custom/media": {
-//        "format": "{icon} {}",
-//        "return-type": "json",
-//        "max-length": 40,
-//        "format-icons": {
-//            "spotify": "",
-//            "default": "󰗃"
-//        },
-//		"on-click": "exec playerctl play-pause",
-//        "escape": true,
-//        "exec": "/usr/bin/python $HOME/.config/waybar/scripts/mediaplayer.py 2> /dev/null" // Script in resources folder
-//    }
 }

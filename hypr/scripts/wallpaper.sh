@@ -160,6 +160,12 @@ echo "$wallpaper" > "$cache_file"
 # --------------------------------------------------------
 	swaync-client --reload-css
 
+
+# --------------------------------------------------------
+# Change Zellij theme
+# --------------------------------------------------------
+~/hyprdots/hypr/scripts/zellijpywal/generate-theme.sh
+
 # Notify pywal work is done
 if [ "$1" == "init" ] ;then
     echo ":: Init"

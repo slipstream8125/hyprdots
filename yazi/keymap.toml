@@ -60,8 +60,8 @@ keymap = [
 	{ on = [ "<C-r>" ],   run = "select_all --state=none",            desc = "Inverse selection of all files" },
 
 	# Operation
-	{ on = [ "o" ],         run = "open",                       desc = "Open the selected files" },
-	{ on = [ "O" ],         run = "open --interactive",         desc = "Open the selected files interactively" },
+	{ on = [ "O" ],         run = "open",                       desc = "Open the selected files" },
+	{ on = [ "o" ],         run = "open --interactive",         desc = "Open the selected files interactively" },
 	{ on = [ "<Enter>" ],   run = "open",                       desc = "Open the selected files" },
 	{ on = [ "<C-Enter>" ], run = "open --interactive",         desc = "Open the selected files interactively" },
 	{ on = [ "y" ],         run = "yank",                       desc = "Copy the selected files" },
@@ -76,7 +76,7 @@ keymap = [
 	{ on = [ "D" ],         run = "remove --permanently",       desc = "Permanently delete the files" },
 	{ on = [ "a" ],         run = "create",                     desc = "Create a file or directory (ends with / for directories)" },
 	{ on = [ "r" ],         run = "rename --cursor=before_ext", desc = "Rename a file or directory" },
-	{ on = [ ";" ],         run = "shell",                      desc = "Run a shell command" },
+	{ on = [ ";" ],         run = "shell --interactive",                      desc = "Run a shell command" },
 	{ on = [ ":" ],         run = "shell --block",              desc = "Run a shell command (block the UI until the command finishes)" },
 	{ on = [ "." ],         run = "hidden toggle",              desc = "Toggle the visibility of hidden files" },
 	{ on = [ "s" ],         run = "search fd",                  desc = "Search files by name using fd" },
