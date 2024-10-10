@@ -12,14 +12,14 @@ return {
 				icons = {
 					package_installed = "✓",
 					package_pending = "➜",
-					package_uninstalled = "✗"
-				}
-			}
+					package_uninstalled = "✗",
+				},
+			},
 		})
 
 		mason_lspconfig.setup({
 			ensure_installed = {
-				"tsserver",
+				"ts_ls",
 				"astro",
 				"html",
 				"cssls",
@@ -27,9 +27,9 @@ return {
 				"lua_ls",
 				"emmet_ls",
 				"pyright",
-				"clangd"
+				"clangd",
 			},
-			automatic_installation = true
+			automatic_installation = true,
 		})
-	end
+	end,
 }

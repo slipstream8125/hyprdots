@@ -1,1 +1,1 @@
-vim.cmd("colorscheme pywal16")
+vim.cmd("colorscheme dracula-soft")
