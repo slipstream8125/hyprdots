@@ -5,14 +5,12 @@ alias macos='$HOME/OneClick-macOS-Simple-KVM/basic.sh &> /dev/null'
 alias PJT='cd /mnt/Personal/Programming/PJT'
 alias walk='walk --icons'
 alias enchilada='cd /mnt/Personal/Oneplus-6'
-alias hivemq-websocketclient='open https://www.hivemq.com/demos/websocket-client/ &> /dev/null'
-alias thingspeak='open https://thingspeak.com/channels &> /dev/null'
 alias VIT="cd /mnt/Personal/VIT"
 export StratOS="/mnt/Personal/StratOS-team"
 alias nvchad="NVIM_APPNAME=nvchad nvim"
 alias rss="neix"
+alias reloadwaybar="pkill -USR2 waybar"
 alias stratos-inxi='inxi -Faz'
-alias reloadwaybar='pkill -USR2 waybar'
 #alias cd='z'
 alias nvimconfig='cd ~/.config/nvim'
 # Vim-like aliases
