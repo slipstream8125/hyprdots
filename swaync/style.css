@@ -343,7 +343,7 @@
 }
 
 .widget-dnd > switch:checked {
-  background: @bg-selected;
+  background: @color6;
 }
 
 .widget-dnd > switch slider {

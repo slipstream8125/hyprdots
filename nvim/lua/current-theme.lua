@@ -1,1 +1,1 @@
-vim.cmd("colorscheme dracula-soft")
+vim.cmd("colorscheme cyberdream")

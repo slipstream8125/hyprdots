@@ -10,6 +10,7 @@
     "modules-left": [
 		"idle_inhibitor",
 	//	"custom/launcher",
+		"sway/workspaces",
         "hyprland/workspaces",
         "hyprland/window",
 		"custom/waybar-mpris",
@@ -36,7 +37,6 @@
     ],
 
     // Modules
-
     "battery": {
         "states": {
             // "good": 95,
@@ -148,6 +148,26 @@
 			"10": "󰍹",
         }
     },
+	"sway/workspaces": {
+		"all-outputs":true,
+		"format": "{icon}",
+	    "format-icons": {
+			"1": "1",
+			"2": "2",
+			"3": "3",
+			"4": "4",
+			"5": "5",
+
+         //   "1": "",
+         //   "2": "",
+         //   "3": "󰙯",
+         //   "4": "",
+         //   "5": "󰡨",
+         //   "6": "",
+			"10": "󰍹",
+        }
+	},
+
 	"custom/waybar-mpris": {
 		"return-type": "json",
 		"max-length": 40, 
