@@ -11,6 +11,8 @@ alias nvchad="NVIM_APPNAME=nvchad nvim"
 alias rss="neix"
 alias reloadwaybar="pkill -USR2 waybar"
 alias stratos-inxi='inxi -Faz'
+alias fabric='python -m fabric'
+alias tmux='tmux -u'
 #alias cd='z'
 alias nvimconfig='cd ~/.config/nvim'
 # Vim-like aliases

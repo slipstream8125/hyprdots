@@ -12,7 +12,7 @@ SETUVAR _fish_abbr_tkss:tmux\x20kill\x2dsession\x20\x2dt
 SETUVAR _fish_abbr_tksv:tmux\x20kill\x2dserver
 SETUVAR _fish_abbr_tl:tmux\x20list\x2dsessions
 SETUVAR _fish_abbr_ts:tmux\x20new\x2dsession\x20\x2ds
-SETUVAR _fisher_budimanjojo_2F_tmux_2E_fish_files:\x7e/\x2econfig/fish/conf\x2ed/tmux\x2eextra\x2econf\x1e\x7e/\x2econfig/fish/conf\x2ed/tmux\x2efish\x1e\x7e/\x2econfig/fish/conf\x2ed/tmux\x2eonly\x2econf\x1e\x7e/\x2econfig/fish/conf\x2ed/tmux_abbrs\x2efish
+SETUVAR _fisher_budimanjojo_2F_tmux_2E_fish_files:\x7e/\x2econfig/fish/conf\x2ed/tmux\x2eextra\x2econf\x1e\x7e/\x2econfig/fish/conf\x2ed/tmux\x2efish\x1e\x7e/\x2econfig/fish/conf\x2ed/tmux\x2eonly\x2econf
 SETUVAR _fisher_jorgebucaran_2F_fisher_files:\x7e/\x2econfig/fish/functions/fisher\x2efish\x1e\x7e/\x2econfig/fish/completions/fisher\x2efish
 SETUVAR _fisher_plugins:jorgebucaran/fisher\x1ebudimanjojo/tmux\x2efish
 SETUVAR _fisher_upgraded_to_4_4:\x1d

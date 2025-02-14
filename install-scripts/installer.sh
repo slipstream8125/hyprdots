@@ -1,6 +1,6 @@
 #!/bin/bash
 install_dependencies() {
-	yay -S --noconfirm hyprland swaync swayosd-git waybar kitty asusctl supergfxctl
+	yay -S --noconfirm hyprland swaync swayosd-git waybar kitty asusctl supergfxctl switcheroo-control yazi 
 }
 
 symlinks() {

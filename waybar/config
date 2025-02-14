@@ -247,7 +247,7 @@
     "custom/power": {
         "format":"󰐥",
        // "on-click": "exec bash -c ~/.config/hypr/scripts/powermenu.sh",
-	   "on-click": "wlogout",
+	   "on-click": "wlogout -b 5",
         "tooltip": false,
     },
 	 "custom/notification": {
