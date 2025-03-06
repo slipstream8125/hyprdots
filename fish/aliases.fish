@@ -15,6 +15,7 @@ alias fabric='python -m fabric'
 alias tmux='tmux -u'
 #alias cd='z'
 alias nvimconfig='cd ~/.config/nvim'
+alias scilab="$HOME/Downloads/scilab-2025.0.0/bin/scilab"
 # Vim-like aliases
 alias :q="exit"
 # Source private aliases

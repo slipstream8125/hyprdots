@@ -1,0 +1,50 @@
+[pyprland]
+plugins = ["scratchpads"]
+
+[scratchpads.term]
+animation = "fromTop"
+command = "kitty --class kitty-dropterm"
+class = "kitty-dropterm"
+size = "75% 60%"
+max_size = "1920px 100%"
+margin = 50
+
+
+[scratchpads.explorer]
+animation = "fromTop"
+command = "thunar --class thunar-pypr"
+class = "thunar-pypr"
+size = "60% 70%"
+margin = 60
+unfocus = "hide"
+lazy = true
+
+[scratchpads.obsidian]
+animation = "fromTop"
+command = "obsidian"
+class = "obsidian"
+lazy = true
+size = "90% 90%"
+excludes = "*"
+
+[scratchpads.ticktick]
+animation = "fromTop"
+command = "ticktick --class ticktick-scratchpad"
+class = "ticktick"
+match_by = "class"
+size = "80% 60%"
+max_size = "1920px 100%"
+margin = 50
+lazy = true
+excludes = "*"
+
+[scratchpads.whatsapp]
+animation = 'fromTop'
+command = " librewolf --class WebApp-WhatsApp --name WebApp-WhatsApp6074 --profile /home/slipstream/.local/share/ice/firefox/WhatsApp6074 --no-remote 'https://web.whatsapp.com/'"
+class = "WebApp-WhatsApp6074"
+match_by = "class"
+size = "80% 60%"
+max_size = "1920px 100%"
+margin = 50
+lazy = true
+excludes = "*"
