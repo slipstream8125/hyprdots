@@ -5,7 +5,7 @@
 # If you want to make sidebar border display just set it same as sidebar background color
 
 # Code syntax highlight theme (you can go to https://github.com/alecthomas/chroma/blob/master/styles to find one you like)
-code_syntax_highlight = "github"
+code_syntax_highlight = "github-dark"
 
 # ========= Border =========
 file_panel_border = "{color6}"
@@ -36,22 +36,22 @@ modal_fg = "#B3B1AD"
 cursor = "{cursor}"
 correct = "#AAD94C"
 error = "#FF3333"
-hint = "#36A3D9"
+hint = "{color6}"
 cancel = "#F07178"
 # Gradient color can only have two colors!
-gradient_color = ["#FFB454", "#36A3D9"]
+gradient_color = ["{color6}", "{color3}"]
 
 # ========= File Panel Special Items =========
-file_panel_top_directory_icon = "#AAD94C"
-file_panel_top_path = "#FFCC66"
-file_panel_item_selected_fg = "#36A3D9"
-file_panel_item_selected_bg = "#1F2430"
+file_panel_top_directory_icon = "{color8}"
+file_panel_top_path = "{color6}"
+file_panel_item_selected_fg = "{color3}"
+file_panel_item_selected_bg = "{background}"
 
 # ========= Sidebar Special Items =========
-sidebar_title = "#36A3D9"
-sidebar_item_selected_fg = "#36A3D9"
-sidebar_item_selected_bg = "#1F2430"
-sidebar_divider = "#242936"
+sidebar_title = "{color6}"
+sidebar_item_selected_fg = "{color2}"
+sidebar_item_selected_bg = "{background}"
+sidebar_divider = "{color2}"
 
 # ========= Modal Special Items =========
 modal_cancel_fg = "#0F1419"
