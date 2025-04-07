@@ -100,8 +100,8 @@
         "format-ethernet": " ", // Icon: ethernet
         "format-disconnected": "⚠  Disconnected",
         "tooltip-format": "{essid}: {frequency}Ghz \nDownload: {bandwidthDownBytes}\nUpload: {bandwidthUpBytes}\n{ifname}: {ipaddr}",
-        "on-click": "bash ~/.config/hypr/scripts/wofi-network-manager/wofi-network-manager.sh",
-		"on-click-right": "kitty -e 'nmtui'",
+      //  "on-click": "bash ~/.config/hypr/scripts/wofi-network-manager/wofi-network-manager.sh",
+		"on-click": "kitty -e 'nmtui'",
 	},
     "network#vpn": {
         "interface": "tun0",
@@ -224,8 +224,8 @@
     },
 	"tooltip": true,
 	"tooltip-format": "Status: {status}\nDevice Connected: {device_alias}",
-    "on-click": "bash ~/.config/hypr/scripts/wofi-bluetooth",
-	"on-click-right": "blueman-manager",
+ //   "on-click": "bash ~/.config/hypr/scripts/wofi-bluetooth",
+	"on-click": "blueman-manager",
 },
 
     "tray": {
