@@ -51,7 +51,9 @@
     "inhibitors",
     "title",
     "dnd",
-    "notifications"
+    "notifications",
+	"mpris",
+	"buttons-grid"
   ],
   "widget-config": {
     "inhibitors": {
@@ -75,14 +77,38 @@
       "image-size": 96,
       "image-radius": 12
     },
-    "buttons-grid": {
+	"buttons-grid": {
       "actions": [
         {
-          "label": "直",
+          "label": "",
+          "command": "kitty nmtui",
+          "tooltip": "Network"
+        },
+        {
+          "label": "",
+          "command": "blueman-manager",
+          "tooltip": "Bluetooth"
+        },
+        {
+          "label": "󰂛",
+          "command": "swaync-client -d",
           "type": "toggle",
-          "active": true,
-          "command": "sh -c '[[ $SWAYNC_TOGGLE_STATE == true ]] && nmcli radio wifi on || nmcli radio wifi off'",
-          "update_command": "sh -c '[[ $(nmcli radio wifi) == \"enabled\" ]] && echo true || echo false'"
+          "tooltip": "DND"
+        },
+        {
+          "label": "󰍜",
+          "command": "nwg-displays",
+          "tooltip": "Screens"
+        },
+        {
+          "label": "󰜉",
+          "command": "reboot",
+          "tooltip": "Reboot"
+        },
+        {
+          "label": "⏻",
+          "command": "shutdown now",
+          "tooltip": "Power Off"
         }
       ]
     }
