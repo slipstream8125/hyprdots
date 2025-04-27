@@ -246,10 +246,6 @@ window#waybar {
 	padding-left:0;
 }
 
-#workspaces button.urgent {
-    border-color: #c9545d;
-    color: #c9545d;
-}
 
 #custom-power {
     font-size:18px;
