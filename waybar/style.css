@@ -235,7 +235,7 @@ window#waybar {
 }
 
 #workspaces button.active {
-    border-bottom: 1px solid  #ff4499;
+    border-bottom: 1px solid  @color2;
     margin-bottom: 1px;
     padding-left:0;
 }
