@@ -7,3 +7,4 @@ source $HOME/.config/fish/profile.fish
 set -x GOPATH $HOME/go
 set -x PATH $PATH $GOPATH/bin
 export LC_ALL="en_US.UTF-8"
+pyenv init - fish | source

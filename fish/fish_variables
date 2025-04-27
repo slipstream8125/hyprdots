@@ -5,7 +5,7 @@ SETUVAR --export SHELL:/usr/bin/fish
 SETUVAR --export UID:1000
 SETUVAR __done_min_cmd_duration:10000
 SETUVAR __done_notification_urgency_level:low
-SETUVAR __fish_initialized:3400
+SETUVAR __fish_initialized:3800
 SETUVAR _fish_abbr_ta:tmux\x20attach\x20\x2dt
 SETUVAR _fish_abbr_tad:tmux\x20attach\x20\x2dd\x20\x2dt
 SETUVAR _fish_abbr_tkss:tmux\x20kill\x2dsession\x20\x2dt
@@ -33,7 +33,7 @@ SETUVAR fish_color_operator:brcyan
 SETUVAR fish_color_param:cyan
 SETUVAR fish_color_quote:yellow
 SETUVAR fish_color_redirection:cyan\x1e\x2d\x2dbold
-SETUVAR fish_color_search_match:bryellow\x1e\x2d\x2dbackground\x3dbrblack
+SETUVAR fish_color_search_match:white\x1e\x2d\x2dbackground\x3dbrblack
 SETUVAR fish_color_selection:white\x1e\x2d\x2dbold\x1e\x2d\x2dbackground\x3dbrblack
 SETUVAR fish_color_status:red
 SETUVAR fish_color_user:brgreen

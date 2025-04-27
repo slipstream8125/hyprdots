@@ -240,6 +240,12 @@ window#waybar {
     padding-left:0;
 }
 
+#workspaces button.focused {
+	border-bottom: 1px solid @color2;
+	margin-bottom: 1px;
+	padding-left:0;
+}
+
 #workspaces button.urgent {
     border-color: #c9545d;
     color: #c9545d;

@@ -126,18 +126,18 @@
         "max-length": 120
     },
 
-    "hyprland/workspaces": {
-        "disable-scroll": true,
-        "disable-markup" : false,
-        "all-outputs": true,
-        "format": "  {icon}  ",
-        //"format":"{icon}",
-        "format-icons": {
-			"1": "1",
-			"2": "2",
-			"3": "3",
-			"4": "4",
-			"5": "5",
+ //   "hyprland/workspaces": {
+ //       "disable-scroll": true,
+ //       "disable-markup" : false,
+ //       "all-outputs": true,
+ //       "format": "  {icon}  ",
+ //       //"format":"{icon}",
+  //      "format-icons": {
+//			"1": "1",
+//			"2": "2",
+//			"3": "3",
+//			"4": "4",
+//			"5": "5",
 
          //   "1": "",
          //   "2": "",
@@ -145,30 +145,17 @@
          //   "4": "",
          //   "5": "󰡨",
          //   "6": "",
-			"10": "󰍹",
+	//		"10": "󰍹",
+			// "active": "󱓻",
+			    "active": "󱓻"
         }
     },
-	"sway/workspaces": {
-		"all-outputs":true,
-		"format": "{icon}",
-	    "format-icons": {
-			"1": "1",
-			"2": "2",
-			"3": "3",
-			"4": "4",
-			"5": "5",
-
-         //   "1": "",
-         //   "2": "",
-         //   "3": "󰙯",
-         //   "4": "",
-         //   "5": "󰡨",
-         //   "6": "",
-			"10": "󰍹",
-        }
-	},
-
-	"custom/waybar-mpris": {
+	 "sway/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": true,
+        "tooltip": false
+    },
+"custom/waybar-mpris": {
 		"return-type": "json",
 		"max-length": 40, 
 		"exec": "waybar-mpris --position --autofocus",
