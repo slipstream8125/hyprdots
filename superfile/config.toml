@@ -3,7 +3,7 @@
 theme = "pywal-superfile"
 # 
 # The editor files will be opened with. (Leave blank to use the EDITOR environment variable).
-editor = ''
+editor = 'kitty -e nvim'
 # 
 # The editor directories will be opened with. (Leave blank to use the default editors).
 dir_editor = ''
@@ -41,7 +41,7 @@ debug = false
 nerdfont = true
 # 
 # Set transparent background or not (this only work when your terminal background is transparent)
-transparent_background = true
+transparent_background = false
 # 
 # File preview width allow '0' (this mean same as file panel),'x' x must be less than 10 and greater than 1 (This means that the width of the file preview will be one xth of the total width.)
 file_preview_width = 0
