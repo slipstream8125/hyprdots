@@ -166,6 +166,13 @@ matugen image "$wallpaper"
 ~/hyprdots/hypr/scripts/zellijpywal/generate-theme.sh
 
 pywalfox update
+# --------------------------------------------------------
+# Reload swayosd
+# --------------------------------------------------------
+
+pkill -USR2 swayosd-server
+
+exec swayosd-server &
 
 # Notify pywal work is done
 if [ "$1" == "init" ] ;then

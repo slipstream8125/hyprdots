@@ -141,7 +141,8 @@ window#waybar {
 }
 
 #cpu {
-    color: #f7768e;
+    /* color: #f7768e; */
+	color: @color6;
 }
 
 #cpu.warning {
@@ -156,7 +157,8 @@ window#waybar {
     animation-timing-function: linear;
     animation-iteration-count: infinite;
     animation-direction: alternate;
-    color: #f7768e;
+    /* color: #f7768e; */
+	color: @color6;
 }
 
 #memory.warning {
@@ -185,7 +187,8 @@ window#waybar {
 }
 
 #pulseaudio {
-    color: #bb9af7;
+    /* color: #bb9af7; */
+	color: @color3;
     border-left: 0px;
     border-right: 0px;
     margin-right: 0;

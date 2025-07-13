@@ -1,0 +1,30 @@
+@import url('file:///home/slipstream/.cache/wal/colors-waybar.css');
+window#osd {
+  padding: 12px 20px;
+  border-radius: 999px;
+  border: none;
+  background: alpha(@background, 0.6); }
+  window#osd #container {
+    margin: 16px; }
+  window#osd image,
+  window#osd label {
+    color: @color6; }
+  window#osd progressbar:disabled,
+  window#osd image:disabled {
+    opacity: 0.5; }
+  window#osd progressbar {
+    min-height: 6px;
+    border-radius: 999px;
+    background: transparent;
+	/* background: alpha(@color6, 0.6); */
+    border: none; }
+  window#osd trough {
+    min-height: inherit;
+    border-radius: inherit;
+    border: none;
+    background: alpha(@color6, 0.5); }
+  window#osd progress {
+    min-height: inherit;
+    border-radius: inherit;
+    border: none;
+    background: @color6; }

@@ -49,13 +49,13 @@ margin = 50
 lazy = true
 excludes = "*"
 
-[scratchpads.whatsapp]
-animation = 'fromTop'
-command = " librewolf --class WebApp-WhatsApp --name WebApp-WhatsApp6074 --profile /home/slipstream/.local/share/ice/firefox/WhatsApp6074 --no-remote 'https://web.whatsapp.com/'"
-class = "WebApp-WhatsApp6074"
+[scratchpads.ytmusic]
+animation = "fromTop"
+command = "youtube-music"
+class = "com.github.th_ch.youtube_music"
 match_by = "class"
-size = "80% 80%"
-# max_size = "1920px 100%"
+size = "80% 60%"
+max_size = "1920px 100%"
 margin = 50
 lazy = true
 excludes = "*"
