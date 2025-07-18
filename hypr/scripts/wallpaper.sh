@@ -11,9 +11,29 @@
 
 # Cache file for holding the current wallpaper
 cache_file="$HOME/.cache/current_wallpaper"
-rasi_file="$HOME/.cache/current_wallpaper.rasi"
+# rofi_command="rofi -x11 -dmenu -theme ${HOME}/.config/rofi/wallselect.rasi"
+cacheDir="${HOME}/.cache/jp/${theme}"
+rasi_file="$HOME/.config/rofi/wallselect.rasi"
+physical_monitor_size=14
+monitor_res=$(hyprctl monitors |grep -A2 Monitor |head -n 2 |awk '{print $1}' | grep -oE '^[0-9]+')
+dotsperinch=$(echo "scale=2; $monitor_res / $physical_monitor_size" | bc | xargs printf "%.0f")
+monitor_res=$(( $monitor_res * $physical_monitor_size / $dotsperinch ))
 
-# Create cache file if not exists
+rofi_override="element-icon{size:${monitor_res}px;border-radius:0px;}"
+
+for imagen in "$wall_dir"/*.{jpg,jpeg,png,webp}; do
+	if [ -f "$imagen" ]; then
+		nombre_archivo=$(basename "$imagen")
+			if [ ! -f "${cacheDir}/${nombre_archivo}" ] ; then
+				convert -strip "$imagen" -thumbnail 500x500^ -gravity center -extent 500x500 "${cacheDir}/${nombre_archivo}"
+			fi
+    fi
+done
+
+if [ ! -d "$cacheDir" ] ; then
+        mkdir -p "$cacheDir"
+fi 
+	#Create cache file if not exists
 if [ ! -f "$cache_file" ] ;then
     touch "$cache_file"
     echo "$HOME/hyprdots/wallpaper/default.jpg" > "$cache_file"
@@ -21,10 +41,10 @@ if [ ! -f "$cache_file" ] ;then
 fi
 
 # Create rasi file if not exists
-if [ ! -f "$rasi_file" ] ;then
-    touch "$rasi_file"
-    echo "* { current-image: url(\"$HOME/hyprdots/wallpaper/default.jpg\", height); }" > "$rasi_file"
-fi
+# if [ ! -f "$rasi_file" ] ;then
+#     touch "$rasi_file"
+#     echo "* { current-image: url(\"$HOME/hyprdots/wallpaper/default.jpg\", height); }" > "$rasi_file"
+# fi
 
 current_wallpaper='$HOME/.cache/wallpaper'
 
@@ -40,13 +60,19 @@ case $1 in
         fi
     ;;
 
+	# monitor_res=$(hyprctl monitors |grep -A2 Monitor |head -n 2 |awk '{print $1}' | grep -oE '^[0-9]+')
+# dotsperinch=$(echo "scale=2; $monitor_res / $physical_monitor_size" | bc | xargs printf "%.0f")
+# monitor_res=$(( $monitor_res * $physical_monitor_size / $dotsperinch ))
+
+# rofi_override="element-icon{size:${monitor_res}px;border-radius:0px;}"
     # Select wallpaper with wofi
     *)
         sleep 0.2
         selected=$( find "$HOME/hyprdots/wallpaper" -type f \( -iname "*.jpg" -o -iname "*.gif" -o -iname "*.jpeg" -o -iname "*.png" \) -exec basename {} \; | sort -R | while read rfile
         do
             echo -en "$rfile\x00icon\x1f$HOME/wallpaper/${rfile}\n"
-        done | wofi -dmenu -i --no-show-icons)
+        done | rofi -dmenu -i -x11 -theme "$HOME"/.config/rofi/wallselect.rasi)
+		# wall_selection=$(find "$wall_dir"  -maxdepth 1  -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" -o -iname "*.webp" \) -exec basename {} \; | sort | while read -r A ; do  echo -en "$A\x00icon\x1f""$cacheDir"/"$A\n" ; done | "$rofi_command")
         if [ ! "$selected" ]; then
             echo "No wallpaper selected"
             exit
