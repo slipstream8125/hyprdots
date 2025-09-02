@@ -1,0 +1,4 @@
+set show-scrollbars true
+set show-v-scrollbar true
+set show-h-scrollbar false
+set selection-clipboard clipboard

@@ -5,9 +5,9 @@ return {
 	config = function()
 		local db = require("dashboard")
 		local config_path = vim.fn.stdpath("config")
-		local plugin_path = config_path .. '/lua/plugins/'
-		local dashboard_file = config_path .. '/lua/plugins/dashboard.lua'
-		local initpath = config_path .. '/init.lua'
+		local plugin_path = config_path .. "/lua/plugins/"
+		local dashboard_file = config_path .. "/lua/plugins/dashboard.lua"
+		local initpath = config_path .. "/init.lua"
 
 		db.setup({
 			theme = "doom",

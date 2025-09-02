@@ -71,7 +71,7 @@ case $1 in
         selected=$( find "$HOME/hyprdots/wallpaper" -type f \( -iname "*.jpg" -o -iname "*.gif" -o -iname "*.jpeg" -o -iname "*.png" \) -exec basename {} \; | sort -R | while read rfile
         do
             echo -en "$rfile\x00icon\x1f$HOME/wallpaper/${rfile}\n"
-        done | rofi -dmenu -i -x11 -theme "$HOME"/.config/rofi/wallselect.rasi)
+        done | sort | rofi -dmenu -i -x11 -theme "$HOME"/.config/rofi/wallselect.rasi)
 		# wall_selection=$(find "$wall_dir"  -maxdepth 1  -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" -o -iname "*.webp" \) -exec basename {} \; | sort | while read -r A ; do  echo -en "$A\x00icon\x1f""$cacheDir"/"$A\n" ; done | "$rofi_command")
         if [ ! "$selected" ]; then
             echo "No wallpaper selected"
@@ -102,7 +102,7 @@ newwall=$(echo "$wallpaper" | sed "s|$HOME/hyprdots/wallpaper/||g")
 # ----------------------------------------------------- 
 # Reload waybar with new colors
 # -----------------------------------------------------
-~/dotfiles/waybar/launch.sh
+# ~/dotfiles/waybar/launch.sh
 
 # ----------------------------------------------------- 
 # Set the new wallpaper
@@ -171,7 +171,7 @@ matugen image "$wallpaper"
 # Send notification
 # ----------------------------------------------------- 
 #dunstify "Setting theme in waybar"
-	pkill -USR2 waybar
+	# pkill -USR2 waybar
 #dunstify "Waybar theme set"
 #dunstify "Changing dunst theme"
 #	mkdir -p  "${HOME}/.config/dunst"

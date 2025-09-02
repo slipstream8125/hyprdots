@@ -34,4 +34,4 @@ opt.conceallevel = 0 -- to show text normally
 opt.signcolumn = "yes" -- always show the sign column
 opt.undofile = true -- persistent undo
 opt.expandtab = false -- use tabs
-opt.guicursor = "n-v-c-i:block" -- cursor style in different modes, see :help 'guicursor'
+-- opt.guicursor = "n-v-c-i:block" -- cursor style in different modes, see :help 'guicursor'

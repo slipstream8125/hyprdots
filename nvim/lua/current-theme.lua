@@ -1,1 +1,1 @@
-vim.cmd("colorscheme pywal")
+vim.cmd("colorscheme pywal16")

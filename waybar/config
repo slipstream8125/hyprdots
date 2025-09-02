@@ -73,7 +73,7 @@
             "warning": 70,
             "critical": 90,
         },
-		"on-click": "gnome-system-monitor",
+		"on-click": "kitty -e 'btop'",
     },
 
     "memory": {
@@ -84,7 +84,7 @@
             "warning": 70,
             "critical": 90
         },
-		"on-click": "gnome-system-monitor",
+		"on-click": "kitty -e btop",
     },
 	 "temperature": {
 	// "thermal-zone": 2,
