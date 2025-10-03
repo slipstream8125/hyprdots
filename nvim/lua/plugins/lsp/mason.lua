@@ -28,6 +28,7 @@ return {
 				"emmet_ls",
 				"pyright",
 				"clangd",
+				"gopls"
 			},
 			automatic_installation = true,
 		})

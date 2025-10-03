@@ -59,7 +59,7 @@ sudo dnf install npm neovim xclip
 
 *For Arch*
 ```bash
-sudo pacman -S npm neovim xclip lazygit
+sudo pacman -S npm neovim xclip lazygit maven
 ```
 - ### Download lazygit (Fedora and Ubuntu)
 
