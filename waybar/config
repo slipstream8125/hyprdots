@@ -223,7 +223,7 @@
         "disabled": ""
     },
 	"tooltip": true,
-	"tooltip-format": "Status: {status}\nDevice Connected: {device_alias}",
+	"tooltip-format": "Status: {status}\nDevice Connected: {device_alias}\nBattery: {device_battery_percentage}%",
  //   "on-click": "bash ~/.config/hypr/scripts/wofi-bluetooth",
 	"on-click": "blueman-manager",
 },

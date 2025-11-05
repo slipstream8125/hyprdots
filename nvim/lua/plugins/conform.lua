@@ -10,6 +10,7 @@ return {
 				-- You can customize some of the format options for the filetype (:help conform.format)
 				c = { "clang-format" },
 				cpp = { "clang-format" },
+				go = { "goimports-reviser" },
 				rust = { "rustfmt", lsp_format = "fallback" },
 				java = { "google-java-format" },
 				javascript = { "prettierd", "prettier", stop_after_first = true },
